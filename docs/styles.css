@@ -1,0 +1,258 @@
+/* @ This part is the template @ */
+
+/* Variables for building and styling the colors of the website */
+:root {
+    --primary: #ddd;
+    --light: #fff;
+    --dark: #333;
+    --BackgroundColor: rgba(169,169,169);
+    --shadow: 0 1px 5px rgba(104,104,104,0.8);
+    --Border_Bottom: 5px solid orange;
+}
+
+/* The main branch */
+html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark)
+}
+
+body {
+    background: var(--BackgroundColor);
+    margin: 30px 50px;
+    line-height: 1.5;
+}
+
+.btn {
+    background: var(--dark);
+    color: var(--light);
+    padding: 0.6rem 1.3rem;
+    text-decoration: none;
+    border: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 20px;
+}
+
+/* Navigation */
+.main-nav ul {
+    display: grid;
+    grid-gap: 1.25rem;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.main-nav a {
+    background: var(--primary);
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow);
+}
+
+.main-nav a:hover {
+    background: var(--dark);
+    color: var(--light);
+}
+
+/* Hoved container */
+.topcontainer {
+    display: grid;
+    grid-gap: 1.25rem;
+    grid-template-areas:
+    'showcase showcase top-box a'
+    'showcase showcase top-box b';
+}
+
+/* Showcase */
+.showcase {
+    grid-area: showcase;
+    min-height: 400px;
+    background: url(sunset-1645103_1920.jpg);
+    /* Takk til annca  Schweiz / Switzerland for bildet. https://pixabay.com/users/annca-1564471/ */
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    box-shadow: var(--shadow);
+}
+
+.showcase h1 {
+    font-size: 3rem;
+    margin-bottom: 0;
+    color: var(--light)
+}
+
+.showcase p {
+    font-size: 1.3rem;
+    margin-top: 0;
+    color: var(--light);
+}
+
+/* Top box */
+.top-box {
+    background: var(--primary);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+}
+
+.top-box .price {
+    font-size: 2.5rem;
+}
+
+.top-box-a {
+    grid-area: top-box-a;
+}
+
+.top-box-b {
+    grid-area: top-box-b;
+}
+
+/* Boxes */
+.boxes {
+    display: grid;
+    grid-gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.box {
+    background: var(--primary);
+    text-align: center;
+    padding: 1rem 2rem;
+    box-shadow: var(--shadow);
+}
+
+.info {
+    background: var(--primary);
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 3rem;
+}
+
+/* Portfolio */
+.portfolio {
+    display: grid;
+    grid-gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.portfolio img {
+    width: 100%;
+    box-shadow: var(--shadow)
+}
+
+/* Footer */
+
+footer { 
+    margin-top: 2rem;
+    background: var(--dark);
+    color: var(--light);
+    text-align: center;
+    padding: 1rem;
+}
+
+.articles {
+    background: var(--primary);
+    padding: 1rem 2rem;
+    box-shadow: var(--shadow);
+}
+
+
+/* MEDIA QUERIES STARTS HERE */
+
+@media(max-width: 700px){
+    body {
+        margin: 0;
+    }
+    .topcontainer {
+
+        grid-template-areas: 
+        'showcase showcase'
+        'top-box-a top-box-b';
+    }
+    .showcase h1 {
+        font-size: 2.5rem;
+    }
+
+    .main-nav ul {
+        grid-template-columns: 1fr;
+    }
+
+    .info {
+        grid-template-columns: 1fr;
+    }
+
+    .info .btn {
+        display: block;
+        text-align: center;
+        margin: auto;
+    }
+
+}
+
+@media(max-width: 500px) {
+
+    body {
+        margin: 0;
+    }
+
+    
+    .topcontainer {
+
+        grid-template-areas: 
+        'showcase'
+        'top-box-a'
+        'top-box-b';
+    }
+}
+/* MEDIA QUERIES ENDS HERE */
+
+/* Dropdown meny */
+.dropbtn {
+
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background: var(--dark);
+    color: var(--light);
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
